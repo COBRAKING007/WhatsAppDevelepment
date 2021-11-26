@@ -17,7 +17,7 @@ public class FBLogin {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/");
-		driver.quit();
+		
 	}
 	
 	@Test
@@ -28,6 +28,11 @@ public class FBLogin {
 	@Test
 	public void userPass(){
 		driver.findElement(By.id("pass")).sendKeys("abc123!@");
+	}
+	
+	@AfterTest
+	public void browserQuit(){
+		driver.quit();
 	}
 }
 	
