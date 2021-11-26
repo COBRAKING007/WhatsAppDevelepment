@@ -11,13 +11,18 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FBLogin {
 	WebDriver driver;
-	@Test
+	@BeforeTest
 	public void launch() {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/");
 		driver.quit();
+	}
+	
+	@Test
+	public void userName(){
+		driver.findElement(By.id("email")).sendKeys("Danny");
 	}
 }
 	
