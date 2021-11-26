@@ -24,6 +24,11 @@ public class FBLogin {
 	public void userName(){
 		driver.findElement(By.id("email")).sendKeys("Danny");
 	}
+	
+	@Test
+	public void userPass(){
+		driver.findElement(By.id("pass")).sendKeys("abc123!@");
+	}
 }
 	
 
